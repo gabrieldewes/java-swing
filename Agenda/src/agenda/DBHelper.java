@@ -47,7 +47,7 @@ public class DBHelper {
         Statement stmt = conn.createStatement();
         try {
             String line;
-            BufferedReader input = openSQLfile( "src/agenda/ddl.sql" );
+            BufferedReader input = openSQLfile( "ddl.sql" );
             while ((line = input.readLine()) != null) {
                 stmt.executeUpdate(line);
                 System.out.println(line);

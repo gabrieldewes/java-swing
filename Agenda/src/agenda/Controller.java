@@ -90,9 +90,13 @@ public class Controller {
         return rs;
     }
     
-    public void initDb () throws IOException, SQLException {
-        DBHelper dh = new DBHelper();
-        dh.createDb();
+    public static void initDb () {
+        try {
+            DBHelper dh = new DBHelper();
+            dh.createDb();
+        } catch (IOException | SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
